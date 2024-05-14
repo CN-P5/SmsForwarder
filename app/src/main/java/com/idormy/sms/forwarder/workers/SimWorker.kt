@@ -69,11 +69,11 @@ class SimWorker(context: Context, params: WorkerParameters) : CoroutineWorker(co
                 if (TaskUtils.simState == TelephonyManager.SIM_STATE_READY) {
                     // 获取 SIM 卡信息
                     App.SimInfoList = PhoneUtils.getSimMultiInfo()
-                    //Log.d(TAG, App.SimInfoList.toString())
+                    Log.d(TAG, it.value.toString())
                     App.SimInfoList.forEach {
                         msg.append("[SIM-").append(it.key + 1).append("]\n")
                         msg.append(getString(R.string.carrier_name)).append(": ").append(it.value.mCarrierName).append("\n")
-                        msg.append(getString(R.string.icc_id)).append(": ").append(it.value.mIccId).append("\n")
+                        //msg.append(getString(R.string.icc_id)).append(": ").append(it.value.mIccId).append("\n")
                         msg.append(getString(R.string.sim_slot_index)).append(": ").append(it.value.mSimSlotIndex).append("\n")
                         msg.append(getString(R.string.number)).append(": ").append(it.value.mNumber).append("\n")
                         msg.append(getString(R.string.country_iso)).append(": ").append(it.value.mCountryIso).append("\n")
