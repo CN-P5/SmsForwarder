@@ -59,7 +59,7 @@ class PhoneUtils private constructor() {
                             simInfo.mNumber = subscriptionInfo.number?.toString()
                             simInfo.mCountryIso = subscriptionInfo.countryIso?.toString()
                             simInfo.mSubscriptionId = subscriptionInfo.subscriptionId
-                            Log.d(TAG,"=====getSimMultiInfo:", simInfo.toString())
+                            Log.d(TAG,"=====getSimMultiInfo:", simInfo.mIccId)
                             infoList[simInfo.mSimSlotIndex] = simInfo
                         }
                     }
