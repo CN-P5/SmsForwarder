@@ -63,6 +63,7 @@ class PhoneUtils private constructor() {
                             infoList[simInfo.mSimSlotIndex] = simInfo
                         }
                     }
+                    Log.e(TAG, "getSimMultiInfo:", simInfo)
                 } else {
                     Log.d(TAG, "2.版本低于5.1的系统，首先调用数据库，看能不能访问到")
                     val uri = Uri.parse("content://telephony/siminfo") //访问raw_contacts表

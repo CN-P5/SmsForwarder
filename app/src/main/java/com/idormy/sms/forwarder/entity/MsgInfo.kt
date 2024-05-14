@@ -79,6 +79,7 @@ data class MsgInfo(
 
     @SuppressLint("SimpleDateFormat")
     fun replaceTemplate(template: String, regexReplace: String = "", needJson: Boolean = false): String {
+        Log.e("RegexReplace", "simInfo:" + simInfo)
         return template.replaceTag(getString(R.string.tag_from), from, needJson)
             .replaceTag(getString(R.string.tag_package_name), from, needJson)
             .replaceTag(getString(R.string.tag_sms), content, needJson)
@@ -86,6 +87,7 @@ data class MsgInfo(
             .replaceTag(getString(R.string.tag_card_slot), simInfo, needJson)
             .replaceTag(getString(R.string.tag_card_subid), subId.toString(), needJson)
             .replaceTag(getString(R.string.tag_title), simInfo, needJson)
+            //.replaceTag(getString(R.string.tag_iccid), simInfo, needJson)
             .replaceTag(getString(R.string.tag_uid), uid.toString(), needJson)
             .replaceTag(
                 getString(R.string.tag_receive_time),
