@@ -63,6 +63,7 @@ class PhoneUtils private constructor() {
                             infoList[simInfo.mSimSlotIndex] = simInfo
                         }
                     }
+                    val simInfo = SimInfo()
                     Log.d(TAG, "getSimMultiInfo:", simInfo)
                 } else {
                     Log.d(TAG, "2.版本低于5.1的系统，首先调用数据库，看能不能访问到")
